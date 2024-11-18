@@ -1,0 +1,42 @@
+.flip-card {
+    width: 200px; /* Chiều rộng của thẻ */
+    height: 300px; /* Chiều cao của thẻ */
+    perspective: 1000px; /* Hiệu ứng 3D */
+    margin: 20px auto; /* Căn giữa thẻ */
+  }
+  
+  .flip-card-inner {
+    width: 100%; /* Kích thước bằng container */
+    height: 100%; /* Kích thước bằng container */
+    transition: transform 0.6s ease-in-out; /* Thời gian và hiệu ứng lật */
+    transform-style: preserve-3d; /* Đảm bảo hiển thị 3D */
+    position: relative; /* Vị trí tương đối */
+  }
+  
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg); /* Lật 180 độ khi kích hoạt */
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute; /* Vị trí tuyệt đối trong container */
+    width: 100%; /* Chiều rộng bằng container */
+    height: 100%; /* Chiều cao bằng container */
+    backface-visibility: hidden; /* Ẩn mặt sau khi chưa lật */
+    display: flex; /* Căn chỉnh nội dung bên trong */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    overflow: hidden; /* Ẩn phần hình ảnh vượt quá khung */
+  }
+  
+  .flip-card-front img,
+  .flip-card-back img {
+    width: 100%; /* Hình ảnh phủ toàn bộ thẻ */
+    height: 100%; /* Hình ảnh phủ toàn bộ thẻ */
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg); /* Xoay mặt sau 180 độ */
+  }
+  
